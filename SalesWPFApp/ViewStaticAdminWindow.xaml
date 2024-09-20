@@ -1,0 +1,47 @@
+﻿<Window x:Class="SalesWPFApp.ViewStaticAdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="ViewStaticAdminWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Name="OrdersListView" Margin="0,0,0,40">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Member ID"
+                                      DisplayMemberBinding="{Binding Order.MemberId}"
+                                      Width="100"/>
+                    <GridViewColumn Header="Order ID"
+                                    DisplayMemberBinding="{Binding OrderId}"
+                                    Width="100"/>
+                    <GridViewColumn Header="Product ID"
+                                    DisplayMemberBinding="{Binding ProductId}"
+                                    Width="100"/>
+                    <GridViewColumn Header="Product Name"
+                                    DisplayMemberBinding="{Binding Product.ProductName}"
+                                    Width="100"/>
+                    <GridViewColumn Header="Unit Price"
+                                    DisplayMemberBinding="{Binding UnitPrice, StringFormat={}{0:C}}"
+                                    Width="120"/>
+                    <GridViewColumn Header="Quantity"
+                                    DisplayMemberBinding="{Binding Quantity}"
+                                    Width="80"/>
+                    <GridViewColumn Header="Discount"
+                                    DisplayMemberBinding="{Binding Discount, StringFormat={}{0:P}}"
+                                    Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Tổng doanh số -->
+        <TextBlock Name="TotalSalesTextBlock"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   Margin="10"
+                   FontSize="16"
+                   FontWeight="Bold"
+                   Text="{Binding TotalSales, StringFormat='Total Sales: {0:C}'}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="SalesWPFApp.EnterNumberItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        ResizeMode="CanResize"
+        Title="Enter Number" Height="161" Width="264" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="206" Height="103">
+            <TextBlock Text="Enter quantity:" Margin="0,0,0,10"/>
+            <TextBox x:Name="QuantityTextBox" 
+                     Width="112"
+                     Text="1"
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Center" Height="24"/>
+            <StackPanel>
+            <Button Content="Add To Cart" 
+                    Width="95"
+                    HorizontalAlignment="Center"
+                    Margin="0,10,0,0"
+                    Click="SubmitButton_Click" Height="19"/>
+                <Button Content="Close" Height="25" Width="48" Click="Button_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

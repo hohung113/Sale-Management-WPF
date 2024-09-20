@@ -1,0 +1,61 @@
+﻿<Window x:Class="SalesWPFApp.MemberProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="MemberProfileWindow" Height="300" Width="500"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="Auto"/>
+            <!-- Email -->
+            <RowDefinition Height="Auto"/>
+            <!-- Company Name -->
+            <RowDefinition Height="Auto"/>
+            <!-- City -->
+            <RowDefinition Height="Auto"/>
+            <!-- Country -->
+            <RowDefinition Height="Auto"/>
+            <!-- Password -->
+            <RowDefinition Height="Auto"/>
+            <!-- Buttons -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Header TextBlock -->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="INFORMATION"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="14" FontWeight="Bold" Margin="5"/>
+
+        <!-- Labels and TextBoxes for member details -->
+        <Label Grid.Row="1" Grid.Column="0" Content="Email:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="1" Text="" Margin="5"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Company Name:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="txtCompanyName" Grid.Row="2" Grid.Column="1" Text="" Margin="5"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="City:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="txtCity" Grid.Row="3" Grid.Column="1" Text="" Margin="5"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Country:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="txtCountry" Grid.Row="4" Grid.Column="1" Text="" Margin="5"/>
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Password:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="txtPassword" Grid.Row="5" Grid.Column="1" Text=""  Margin="5"/>
+
+        <!-- Buttons for closing and updating profile -->
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Button x:Name="btnUpdateProfile" Content="Update Profile" Width="120" Margin="5" Click="btnUpdateProfile_Click"/>
+            <Button x:Name="btnClose" Content="Close" Width="120" Margin="5" Click="btnClose_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="SalesWPFApp.ListOrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="ListOrdersWindow" Height="550" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ListView Name="CartListView" Margin="0,0,10,67">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Product ID" Width="120" DisplayMemberBinding="{Binding ProductId}" />
+                    <GridViewColumn Header="Product Name" Width="200" DisplayMemberBinding="{Binding ProductName}" />
+                    <GridViewColumn Header="Quantity" Width="100" DisplayMemberBinding="{Binding Quantity}" />
+                    <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding UnitPrice}" />
+                    <GridViewColumn Header="Total Value" Width="120" DisplayMemberBinding="{Binding TotalValue}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="CheckOut" HorizontalAlignment="Left" Margin="293,386,0,0" VerticalAlignment="Top" Height="47" Width="180" Background="#FFFD1313" FontWeight="Bold" Foreground="#FFEAD9D9" Click="btnCheckOut_Click"/>
+        <TextBlock x:Name="tblTotalMoney" HorizontalAlignment="Left" Margin="293,349,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="32" Width="152" FontWeight="Bold" Foreground="Red"/>
+        <Button Content="Exit" HorizontalAlignment="Center" Margin="0,466,0,0" VerticalAlignment="Top" Height="51" Width="100" Click="ButtonExit_Click"/>
+    </Grid>
+</Window>
